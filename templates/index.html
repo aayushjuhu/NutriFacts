@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="!">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="icon" type="image/x-icon" href="Picture1-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>NutriFacts</title>
+</head>
+
+<body>
+    <section class="container-fluid"
+        style="background: rgb(121,9,96);background: linear-gradient(169deg, rgba(121,9,96,1) 35%, rgba(3,0,255,1) 100%);"
+        data-aos="fade-down" data-duration="8000">
+        <a href="" class="navbar-brand">
+            <h1 style="color: white;" data-aos="zoom-in">NutriFacts</h1>
+        </a>
+        <br><br><br><br>
+        <h1 class="text-center" style="color:aliceblue"><span class="mul"></span></h1>
+        <script>
+            var typing = new Typed(".mul", {
+                strings: ["Know what your body gets from what you eat!"],
+                typeSpeed: 100
+            });
+
+        </script>
+        <br><br>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <input class="text-center" name="inpt" placeholder="Search for fruits/vegetables" type="text"
+                        id="s1"
+                        style="border-radius: 10px;width: 40vw; font-family: 'Times New Roman', Times, serif;font-size: 40px;">
+                    <button type="submit" class="btn btn-lg" name="b1"><i class="fa fa-search"
+                            style="font-size: 20px; color:white"></i></button>
+                </form>
+
+            </div>
+        </div>
+        <br><br><br><br>
+    </section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <br>
+                {% for details in getinfo %}
+                    <h1>{{details.name}}</h1>
+                    <p>{{details.description}}</p>
+                    <img class="img-fluid" src={{details.image}}>
+                    <i style="color:grey">Image by <a href={{details.imageauthlink}}>{{details.imageauth}}</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7130981">Pixabay</i></a>
+                    <br><br>
+                    <h4>Benefits</h4>
+                    <p><i>Source: {{details.bauth}}</i></p>
+                        <ol class="list-group">
+                        <li class="list-group-item">{{details.b1}}</li>
+                            <li class="list-group-item">{{details.b2}}</li>
+                            <li class="list-group-item">{{details.b3}}</li>
+                            <li class="list-group-item">{{details.b4}}</li>
+                            <li class="list-group-item">{{details.b5}}</li>
+                            <li class="list-group-item">{{details.b6}}</li>
+                            <li class="list-group-item">{{details.b7}}</li>
+                            <li class="list-group-item">{{details.b8}}</li>
+                        </ol>
+                    
+            </div>
+                
+                
+                
+            <div class="col-sm-4">
+                <br><br>
+                
+                    <h4>Nutritional Facts({{details.servesize}})</h4>
+                    <p>%values are based on a 2,000 calorie diet.</p>
+                    <p><i>Source:{{details.nsrc}}</i></p>
+                
+                    <table class="table table-stripped">
+                        <tbody>
+                            <tr>
+                                <td>Calories</td>
+                                <td>{{details.cals}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Fat</td>
+                                <td>{{details.tfat}}</td>
+                            </tr>
+                            <tr>
+                                <td>Cholestrol</td>
+                                <td>{{details.cholestrol}}</td>
+                            </tr>
+                            <tr>
+                                <td>Sodium</td>
+                                <td>{{details.sodium}}</td>
+                            </tr>
+                            <tr>
+                                <td>Potassium</td>
+                                <td>{{details.potassium}}</td>
+                            </tr>
+                            <tr>
+                                <td>Dietary fiber</td>
+                                <td>{{details.df}}</td>
+                            </tr>
+                            <tr>
+                                <td>Sugar</td>
+                                <td>{{details.sugar}}</td>
+                            </tr>
+                            <tr>
+                                <td>Protein</td>
+                                <td>{{details.protein}}</td>
+                            </tr>
+                            <tr>
+                                <td>Vitamin C</td>
+                                <td>{{details.vitaminc}}</td>
+                            </tr>
+                            <tr>
+                                <td>Iron</td>
+                                <td>{{details.iron}}</td>
+                            </tr>
+                            <tr>
+                                <td>Vitamin B6</td>
+                                <td>{{details.vitaminb6}}</td>
+                            </tr>
+                            <tr>
+                                <td>Magnesium</td>
+                                <td>{{details.magnesium}}</td>
+                            </tr>
+                            <tr>
+                                <td>Calcium</td>
+                                <td>{{details.calcium}}</td>
+                            </tr>
+                            <tr>
+                                <td>Vitamin-D</td>
+                                <td>{{details.vitamind}}</td>
+                            </tr>
+
+                            {% endfor %}
+
+                    </tbody>
+                </table>
+                
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <footer class="text-center" style="font-family: Oswald;">
+        <h5>&#169;2023, NutriFacts<br>Developed by Aayush Juhukar</h5>
+    </footer>
+    </div>
+</body>
+
+</html>
