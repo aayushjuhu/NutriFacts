@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="!">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="icon" type="image/x-icon" href='/static/favicon.png'>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>NutriFacts</title>
+</head>
+
+<body>
+    <section class="container-fluid" data-aos="fade-down" data-duration="8000">
+        <div class="row">
+            <div class="col-sm-10">
+                <a href="" class="navbar-brand">
+                    <h1 id="logo" data-aos="zoom-in">NutriFacts</h1>
+                </a>
+
+            </div>
+            <div class="col-sm-2">
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i id="user" class="fa fa-user" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <h5 id="user-name">Hi {{user}}</h5>
+                        <a type="button" href="/logout" class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <h1 class="text-center"><span class="mul"></span></h1>
+        <script>
+            var typing = new Typed(".mul", {
+                strings: ["Know what your body gets from what you eat!"],
+                typeSpeed: 100
+            });
+
+        </script>
+        <br><br>
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <form action='/home' method="POST">
+
+                    <input class="text-center" name="inpt" placeholder="Search for fruits/vegetables" type="text"
+                        id="s1">
+                    <button type="submit" class="btn btn-lg" name="b1"><i id="subbtn" class="fa fa-search"></i></button>
+                </form>
+
+            </div>
+        </div>
+        <br><br><br><br>
+    </section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <br>
+                {% if getinfo %}
+
+
+                <h1>{{getinfo.name}}</h1>
+                <p>{{getinfo.description}}</p>
+                <img class="img-fluid" src={{getinfo.image}}>
+                <i id="imgauth">Image by <a href={{getinfo.imageauthlink}}>{{getinfo.imageauth}}</a> from <a
+                        href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=7130981">Pixabay</i></a>
+                <br><br>
+                <h4>Benefits</h4>
+                <p><i>Source: {{getinfo.bauth}}</i></p>
+                <ol class="list-group">
+                    <li class="list-group-item">{{getinfo.b1}}</li>
+                    <li class="list-group-item">{{getinfo.b2}}</li>
+                    <li class="list-group-item">{{getinfo.b3}}</li>
+                    <li class="list-group-item">{{getinfo.b4}}</li>
+                    <li class="list-group-item">{{getinfo.b5}}</li>
+                    <li class="list-group-item">{{getinfo.b6}}</li>
+                    <li class="list-group-item">{{getinfo.b7}}</li>
+                    <li class="list-group-item">{{getinfo.b8}}</li>
+                </ol>
+
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <br><br>
+
+                <h4>Nutritional Facts({{getinfo.servesize}})</h4>
+                <p>%values are based on a 2,000 calorie diet.</p>
+                <p><i>Source:{{getinfo.nsrc}}</i></p>
+
+                <table class="table table-stripped">
+                    <tbody>
+                        <tr>
+                            <td>Calories</td>
+                            <td>{{getinfo.cals}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Fat</td>
+                            <td>{{getinfo.tfat}}</td>
+                        </tr>
+                        <tr>
+                            <td>Cholestrol</td>
+                            <td>{{getinfo.cholestrol}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sodium</td>
+                            <td>{{getinfo.sodium}}</td>
+                        </tr>
+                        <tr>
+                            <td>Potassium</td>
+                            <td>{{getinfo.potassium}}</td>
+                        </tr>
+                        <tr>
+                            <td>Dietary fiber</td>
+                            <td>{{getinfo.df}}</td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>{{getinfo.sugar}}</td>
+                        </tr>
+                        <tr>
+                            <td>Protein</td>
+                            <td>{{getinfo.protein}}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>{{getinfo.vitaminc}}</td>
+                        </tr>
+                        <tr>
+                            <td>Iron</td>
+                            <td>{{getinfo.iron}}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>{{getinfo.vitaminb6}}</td>
+                        </tr>
+                        <tr>
+                            <td>Magnesium</td>
+                            <td>{{getinfo.magnesium}}</td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>{{getinfo.calcium}}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin-D</td>
+                            <td>{{getinfo.vitamind}}</td>
+                        </tr>
+
+
+                        {% endif %}
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+    <footer class="text-center">
+        <h5>&#169;2023, NutriFacts<br>Developed by Aayush Juhukar</h5>
+    </footer>
+    </div>
+</body>
+
+</html>

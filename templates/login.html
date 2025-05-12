@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="!">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/log.css">
+    <link rel="icon" type="image/x-icon" href='/static/favicon.png'>
+    <title>Nutrifacts | Welcome</title>
+</head>
+
+<body>
+    <!-- <div class="mainbox">
+    </div>
+    <div class="logobox">
+        <h2 id="logo">NutriFacts</h2>
+        <ul class="nav nav-tabs nav-fill" id="mytab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" type="button"
+                    role="tab" aria-controls="login" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button"
+                    role="tab" aria-controls="register" aria-selected="false">Register</button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="container">
+                    <div class="row mt-4">
+                        <div class="col-sm-12">
+                            <form>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control form-control-sm" id="email" placeholder="Email">
+                                </div>
+                                <div class="form-group mt-2">
+                                    <input type="email" class="form-control form-control-sm" id="pass" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    {% with messages= get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class="container-fluid">
+        <div class="row">
+            <div id="leftp" class="col-sm-4">
+                <h1 id="logo">NutriFacts</h1>
+                <img class="text-center" src="/static/leftpane.png" alt="">
+                <h4 id="tagline" class="text-center">Your Guide to Healthy Choices</h4>
+            </div>
+            <div class="rightp col-sm-8 mr-4">
+                <div class="container mt-4">
+                    <div class="logobox">
+                        <ul class="nav nav-tabs nav-fill" id="mytab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login"
+                                    type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="register-tab" data-bs-toggle="tab"
+                                    data-bs-target="#register" type="button" role="tab" aria-controls="register"
+                                    aria-selected="false">Register</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="login" role="tabpanel"
+                                aria-labelledby="login-tab">
+                                <div class="container">
+                                    <div class="row mt-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-container text-center">
+                                                <form action="/login" method="POST">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group mt-2">
+                                                        <input type="password" class="form-control" name="password" id="password"
+                                                            placeholder="Password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="register" role="tabpanel"
+                                aria-labelledby="register-tab">
+                                <div class="container">
+                                    <div class="row mt-4">
+                                        <div class="col-sm-12">
+                                            <div class="form-container text-center">
+                                                <form action='/register' method="POST">
+                                                    <div class="form-group mb-2">
+                                                        <input type="text" class="form-control" name='name' id="name"
+                                                            placeholder="Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" id="email" name="email"
+                                                            placeholder="Email">
+                                                    </div>
+                                                    <div class="form-group mt-2">
+                                                        <input type="password" class="form-control" id="password" name="password"
+                                                            placeholder="Password">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success mt-4">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

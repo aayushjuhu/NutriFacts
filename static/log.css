@@ -1,0 +1,87 @@
+#logo{
+    padding-bottom: 2vh;
+    color: rgb(77, 122, 9);
+    font-family: Oswald;
+}
+#tagline{
+    color: rgb(77, 122, 9);
+    font-family: Oswald;
+}
+
+#leftp{
+    border-right: rgb(77, 122, 9) 4px solid;
+    height: 100vh;
+    padding: 20px;
+    background-color: azure;
+}
+
+
+#leftp img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.form-control{
+    max-width: 200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.form-container{
+    display: flex-box;
+    align-content: center;
+}
+
+.nav-link active{
+    border-color:rgb(77, 122, 9);
+    color: green;
+}
+.nav-tabs .nav-link.active{
+    border-color:rgb(77, 122, 9);
+    color: rgb(77, 122, 9);
+    border-top: 0%;
+    font-weight: 600;
+}
+.nav-tabs .nav-link{
+    border-color:rgb(77, 122, 9);
+    color: rgb(77, 122, 9);
+    font-weight: 600;
+}
+.form-group {
+    text-align: center;
+}
+.rightp{
+    background-image: url('/static/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logobox {
+    margin-left: 20%;
+    margin-top: 20%;
+    border: rgb(77, 122, 9) 1px solid;
+    padding-bottom: 4%;
+    border-radius: 10px;
+    max-width: 480px;
+    background-color: rgba(255, 255, 255, 0.66);
+    color:rgb(77, 122, 9)
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    #leftp{
+        border-right: 0px;
+        border-bottom: rgb(77, 122, 9) 4px solid;
+        height: 100vh;
+        padding: 10px;
+        background-color: azure;
+    }
+    .logobox{
+        padding: 20px;
+        margin: 0px;
+    }    
+}

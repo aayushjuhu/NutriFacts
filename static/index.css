@@ -1,0 +1,67 @@
+section{
+    background: rgb(121,9,96);
+    background: linear-gradient(169deg, rgb(49, 150, 41) 35%, rgb(68, 239, 119) 100%);
+}
+
+#logo{
+    color: white;
+}
+
+.mul{
+    color:aliceblue
+}
+
+#s1{
+    border-radius: 10px;
+    width: 40vw; 
+    border: white 1px solid;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    background-color: transparent;
+    color: white;
+}
+
+#s1::placeholder{
+    color: white;
+}
+
+
+
+#subbtn{
+    font-size: 44px; 
+    color:white;
+}
+
+#subbtn:hover{
+    color: azure;
+}
+
+#imgauth{
+    color:grey
+}
+
+footer{
+    margin-top: 12%;
+    font-family: Oswald;
+}
+
+#user{
+   color: white;
+}
+
+#user:hover{
+   transform: scale(1.4);
+}
+
+#userbtn{
+    background-color: transparent;
+    border: 0px;
+}
+
+#user-name{
+    padding-left: 2vh;
+}
+
+.btn-outline-dark{
+    margin-top: 0.5rem;
+}
