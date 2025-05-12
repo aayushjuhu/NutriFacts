@@ -9,7 +9,7 @@
 
 - 🔍 Search and view detailed nutritional facts of fruits and vegetables
 - 📋 Explore health benefits associated with various food items
-- 🔐 User authentication using SQL (SQLite/MySQL/PostgreSQL)
+- 🔐 User authentication using SQL
 - 🗃️ Nutrition data stored and retrieved from MongoDB
 - 🧼 Clean and user-friendly web interface
 
@@ -22,4 +22,4 @@
 - **Backend**: Flask (Python)
 - **Authentication**: SQL database
 - **Data Storage**: MongoDB
-- **Frontend**: HTML, CSS (Bootstrap), Jinja2 templating
+- **Frontend**: HTML, CSS, Javascript, Jinja2 templating
